@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Event invite</title>
+        <style>
+            body {
+               background-color:pink; 
+               border-style:inset;
+                border-width:6px;
+                text-align:center;
+                background-image:url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Coat_of_arms_of_the_United_Kingdom_%282022%2C_variant_2%29.svg/250px-Coat_of_arms_of_the_United_Kingdom_%282022%2C_variant_2%29.svg.png");
+                background-size: contain;
+                background-repeat:   no-repeat;
+                background-position: top center;
+                
+            }
+            h1 {
+            z-index: 2;
+            font-family:cursive;
+            color:rgb(59, 57, 64);
+            text-align:center;
+            }
+            h2 {
+            text-align:centre;
+            position:relative;
+            top: 150px;
+            z-index: 2;
+            font-family:cursive;
+            text-align:center;
+            padding:20px;
+            }
+          p{
+           width:150px;
+            position: relative;
+            top: 120px;
+            left: 10px;
+            z-index: 2;
+            font-family:monospace;
+            }
+             ul {
+                width: 180px;
+            position: relative;
+            top: 120px;
+            left: 10px;
+            z-index: 2;
+            font-family:monospace;
+            padding:5px;
+            }
+           /*#coat_of_arms {*/
+           /*    width: 600px;*/
+           /* position: fixed;*/
+           /* top: 0px;*/
+           /* left: 0px;*/
+           /* z-index: 0;*/
+           /* opacity: 50%;*/
+           /* text-align:center;*/
+            
+           /*}*/
+           #dress_code {
+               width: 300px;
+            position: relative;
+            top: 5px;
+            left: 200px;
+            text-align:center;
+            
+           }
+          div {
+            position: relative;
+            top: 70px;
+            z-index: 5;
+            opacity: 100%;
+            color:red;
+            text-align:center;
+            font-size:300px;
+            
+           }
+           #rsvp {
+               width: 300px;
+            position: relative;
+            left: 350px;
+            z-index: 5;
+            color:red;
+            text-align:center;
+           }
+  button{
+      position:centre;
+      padding:10px;
+  border-radius:0;
+   z-index: 5;
+  font-size:18px;
+  height:35px;
+  width:100px;
+  background-color:red;
+      text-align:center;
+  }
+    #countdown{
+      position:centre;
+      padding:10px;
+  border-radius:0;
+   z-index: 1;
+  font-size:18px;
+  height:35px;
+  width:500px;
+  background-color:blue;
+      text-align:center;
+  }
+        </style>
+    </head>
+    <body>
+       
+        <h1>You're invited....</h1>
+        <div>40</div>
+        
+        <h2>To Hannah's 40th Birthday!</h2>
+        <h2>15th November 2025, 2pm onwards</h2>
+         <h2> <a href= "https://interactives.rct.uk/maps/buckingham.html?_ga=2.119491657.1964575342.1587212960-1737232293.1587043084">At Buckingham Palace </a> </h2>
+        
+        <p>The details:</p>
+        <ul>
+            <li>Arrival from 2pm</li>
+            <li>Child friendly buffet available</li>
+            <li>Family welcome until 6pm</li>
+            <li>Adults only disco from 6pm onwards</li>
+            <li>Evening hog roast on the terrace</li>
+        </ul>
+        
+        
+    <a href="mailto:hannah@example.org?subject=I'd%20love%20to%20come%20to%20your%20party&body=dietary%20requirements%3A..%0Access%20requirements%3A...">
+                <button class="btn btn__text  btn-__center">RSVP</button>
+    </a>
+        <h2 id="dress_code"> Dress code: Dress like Royalty</h2>
+        
+   <h2 id="party in...."> Party in.........</h2>
+        </body>
+       
+        <p id="countdown"></p>
+
+<script>
+
+var countDownDate = new Date("Nov 15, 2025 15:37:25").getTime();
+
+
+var x = setInterval(function() {
+
+
+  var now = new Date().getTime();
+
+
+  var distance = countDownDate - now;
+
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+     </html>
